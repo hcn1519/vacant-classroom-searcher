@@ -1,0 +1,44 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  background-color: #686765;
+  width: 100%;
+}
+.col {
+  padding: 0 !important;
+}
+#header {
+  height: 25vh;
+  display: table;
+  width: 100%;
+  background-color :#f0f1f5;
+}
+#header > span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.article {
+  height: 25vh;
+  display: table;
+  width: 100%;
+}
+.article > h4 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.left-box {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.center-box {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.right-box {
+  margin-left: 5px;
+  margin-right: 10px;
+}

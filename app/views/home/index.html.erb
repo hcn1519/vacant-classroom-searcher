@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="flip-container">
+		<div class="flipper">
+			<div class="front">
+
+  <div class="row">
+    <!-- 수업 시간 및 현재 시간 나오는 부분 -->
+    <div class="col s12">
+      <header id="header">
+          <span>
+            <div id="lecture"></div><br>
+            <span>현재시간 :</span>
+            <div style="display: inline-block" class="animated infinite pulse" id="clock"></div>
+          </span>
+      </header>
+    </div>
+
+      <!-- 해당 건물 로딩 부분 -->
+      <% for i in 0..8 %>
+        <% if i % 2 != 0 %>
+            <div class="col s4">
+              <article class="article article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
+                <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
+              </article>
+            </div>
+        <% else %>
+          <div class="col s4">
+            <article class="article z-depth-2 article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
+              <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
+            </article>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div> <!-- row end -->
+
+    <div class="back">
+  		<div class="flip-modal">
+  			<p>Hello world</p>
+  			<div class="right">
+          <button>OK</button>
+        </div>
+  		</div>
+  	</div>
+
+  </div>
+</div>
+
+<script>
+function flip_dialog(color) {
+  // fix backstyle
+  $('.flip-container .back').height(
+    $('.flip-container .front').height()
+  );
+  // scroll to top
+	$(window).scrollTop(0);
+  $('.back').css("background-color", color);
+	// then flip that side
+	$('.flip-container').addClass('hover');
+  $('.flip-container .back button').click(function(){
+	   $('.flip-container').removeClass('hover');
+	});
+}
+
+$(function() {
+  <% for i in 0..8 %>
+  	$('.article<%= i %>').click(function() {
+      var color = "<%= @boxContent[i][:backgroundColor] %>";
+  		flip_dialog(color);
+  	});
+  <% end %>
+});
+</script>
