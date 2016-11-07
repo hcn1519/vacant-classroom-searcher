@@ -8,9 +8,9 @@
     <div class="col s12">
       <header id="header">
           <span>
-            <div id="lecture"></div><br>
+            <div class="lecture"></div><br>
             <span>현재시간 :</span>
-            <div style="display: inline-block" class="animated infinite pulse" id="clock"></div>
+            <div style="display: inline-block" class="animated infinite pulse clock"></div>
           </span>
       </header>
     </div>
@@ -19,15 +19,19 @@
       <% for i in 0..8 %>
         <% if i % 2 != 0 %>
             <div class="col s4">
-              <article class="article article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
-                <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
-              </article>
+              <%= link_to home_result_path(:building => i), :remote=> true , :method=> :post do %>
+                <article class="article article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
+                  <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
+                </article>
+              <% end %>
             </div>
         <% else %>
           <div class="col s4">
-            <article class="article z-depth-2 article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
-              <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
-            </article>
+            <%= link_to home_result_path(:building => i), :remote=> true , :method=> :post do %>
+              <article class="article z-depth-2 article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
+                <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
+              </article>
+            <% end %>
           </div>
         <% end %>
       <% end %>
@@ -37,7 +41,16 @@
 
     <div class="back">
   		<div class="flip-modal">
-  			<p>Hello world</p>
+
+        <div class="col s12">
+          <div class="lecture"></div><br>
+          <span>현재시간 :</span>
+          <div style="display: inline-block" class="animated infinite pulse clock"></div>
+        </div>
+
+        <article id="resultContent">
+        </article>
+        <div class="test"></div>
   			<div class="right">
           <button>OK</button>
         </div>

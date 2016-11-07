@@ -8,9 +8,8 @@ function startTime() {
     d = dayOftheWeek(d);
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('lecture').innerHTML = lec;
-    document.getElementById('clock').innerHTML =
-    d + "요일 " + h + ":" + m + ":" + s;
+    $(".lecture").html(lec);
+    $(".clock").text(d + "요일 " + h + ":" + m + ":" + s);
     var t = setTimeout(startTime, 500);
 }
 function dayOftheWeek(d){

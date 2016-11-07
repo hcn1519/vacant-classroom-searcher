@@ -7,6 +7,35 @@ class HomeController < ApplicationController
       boxStyle = {:name => name[i], :backgroundColor => backColor[i]}
       @boxContent[i] = boxStyle
     end
+
   end
 
+  def result
+    @building = paramCheck(params[:building])
+  end
+
+  private
+  def paramCheck(para)
+    if para == "0"
+      building = "K"
+    elsif para == "1"
+      building = "J"
+    elsif para == "2"
+      building = "MA"
+    elsif para == "3"
+      building = "AS"
+    elsif para == "4"
+      building = "D"
+    elsif para == "5"
+      building = "RA"
+    elsif para == "6"
+      building = "R"
+    elsif para == "7"
+      building = "X"
+    elsif para == "8"
+      building = "GA"
+    end
+
+    building
+  end
 end
