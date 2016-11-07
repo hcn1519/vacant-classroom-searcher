@@ -1,10 +1,18 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@media(min-width: 450px){
+  .container {
+    width: 90% !important;
+  }
+}
+@media(max-width: 449px){
+  .container {
+    width: 100% !important;
+  }
+}
 .container {
   background-color: #686765;
-  width: 100%;
 }
 .col {
   padding: 0 !important;
@@ -23,7 +31,7 @@
 .article {
   height: 25vh;
   display: table;
-  width: 100%;
+  width: 100% !important;
 }
 .article > h4 {
   display: table-cell;
