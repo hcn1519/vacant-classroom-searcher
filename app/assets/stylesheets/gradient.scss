@@ -1,0 +1,20 @@
+.styleOfBack{
+  /* fallback */
+  background-color: #fb9782;
+  background-repeat: repeat-y;
+
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, left top, right top, from(#c7646c), to(#dfddcd));
+// backColor = ["#fb9782", "#fb7f8b", "#311521", "#dfddcd", "#c7646c", "#fb9782", "#311521", "#d1b8b1", "#fb7f8b"]
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(left, #fb9782, #dfddcd);
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(left, #fb9782, #dfddcd);
+
+  /* IE 10 */
+  background: -ms-linear-gradient(left, #fb9782, #dfddcd);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(left, #fb9782, #dfddcd);
+}

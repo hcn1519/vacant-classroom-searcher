@@ -18,7 +18,7 @@
 }
 
 .flip-container, .front, .back {
-	width: 100%;
+	width: 100% !important;
 }
 
 /* flip speed goes here */
@@ -64,32 +64,4 @@
 .flip-modal{
 	width: 100%;
 
-}
-
-.flip-modal button{
-	padding: 7px 30px;
-	background: #888888;
-	color: white;
-	border: 0px none;
-	border-radius: 3px;
-	cursor: pointer;
-}
-
-.flip-modal .right{
-	text-align: right;
-}
-
-/**
- * 	large buttons style
- */
-.large-buttons {
-  padding: 10px 30px;
-  font: 15px Arial;
-  display: block;
-  background: #51749C;
-  color: #FFFFFF;
-  border: 0px none;
-  border-radius: 5px;
-  margin: 30px auto;
-  cursor: pointer;
 }

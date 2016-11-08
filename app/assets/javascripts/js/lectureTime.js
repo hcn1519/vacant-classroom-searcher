@@ -30,8 +30,9 @@ function checkLectureHour(){
   var hour = today.getHours();
   var minute = today.getMinutes();
   var result;
-  if(hour == 9 || hour == 15){
+  if(hour == 9 || hour == 12 || hour == 15){
     if (hour == 9) result = "1교시에요.";
+    else if(hour == 12) result = "3교시에요.";
     else result = "5교시에요.";
   } else if(hour == 10 || hour == 13 || hour == 16){
       if(minute <= 15) {

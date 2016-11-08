@@ -39,21 +39,21 @@
 
   </div> <!-- row end -->
 
-    <div class="back">
+    <div class="back styleOfBack">
   		<div class="flip-modal">
+        <%= render 'home/backNav' %>
 
         <div class="col s12">
           <div class="lecture"></div><br>
           <span>현재시간 :</span>
           <div style="display: inline-block" class="animated infinite pulse clock"></div>
         </div>
-
+        
         <article id="resultContent">
+          <%= render 'home/resultTable' %>
         </article>
         <div class="test"></div>
-  			<div class="right">
-          <button>OK</button>
-        </div>
+
   		</div>
   	</div>
 
