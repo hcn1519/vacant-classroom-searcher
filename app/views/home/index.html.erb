@@ -7,11 +7,11 @@
     <!-- 수업 시간 및 현재 시간 나오는 부분 -->
     <div class="col s12">
       <header id="header">
-          <span>
-            <div class="lecture"></div><br>
-            <span>현재시간 :</span>
-            <div style="display: inline-block" class="animated infinite pulse clock"></div>
-          </span>
+        <span>
+          <div class="lecture"></div><br>
+          <span >현재시간 :</span>
+          <div style="display: inline-block" class="animated infinite pulse clock"></div>
+        </span>
       </header>
     </div>
 
@@ -21,7 +21,7 @@
             <div class="col s4">
               <%= link_to home_result_path(:building => i), :remote=> true , :method=> :post do %>
                 <article class="article article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
-                  <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
+                  <h5 class="white-text"><%= @boxContent[i][:name] %></h5>
                 </article>
               <% end %>
             </div>
@@ -29,7 +29,7 @@
           <div class="col s4">
             <%= link_to home_result_path(:building => i), :remote=> true , :method=> :post do %>
               <article class="article z-depth-2 article<%=i%>" style="background-color: <%= @boxContent[i][:backgroundColor] %>">
-                <h4 class="white-text"><%= @boxContent[i][:name] %></h4>
+                <h5 class="white-text"><%= @boxContent[i][:name] %></h5>
               </article>
             <% end %>
           </div>
@@ -48,7 +48,7 @@
           <span>현재시간 :</span>
           <div style="display: inline-block" class="animated infinite pulse clock"></div>
         </div>
-        
+
         <article id="resultContent">
           <%= render 'home/resultTable' %>
         </article>

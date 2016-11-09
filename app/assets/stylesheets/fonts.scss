@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'monsori';
+    src: font-url('TmonMonsori.otf.otf') format('opentype'),
+         font-url('TmonMonsori.ttf.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tium';
+    src: font-url('TmonTium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+
+* {
+  font-family: 'Spoqa Han Sans';
+}
+
+h5 {
+  font-family: 'monsori' !important;
+}
