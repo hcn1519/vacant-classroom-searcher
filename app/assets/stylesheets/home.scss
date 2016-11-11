@@ -55,7 +55,18 @@
 }
 
 #backButton {
-  color: #311521 !important;
-  background: rgba(255,255,255, 0.3);
-  margin-bottom:20px;
+  background: transparent;
+  box-shadow: none;
+  color: #262626;
+}
+#emptyResult {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#sorry {
+  height: 50vh;
+  width: auto;
+  max-width: 100%;
 }
