@@ -43,19 +43,22 @@
   		<div class="flip-modal">
         <%= render 'home/backNav' %>
 
-        <div class="col s12">
-          <div class="lecture"></div><br>
+        <div class="col s12 center">
+          <div class="lecture" style="margin-top: 20px"></div><br>
           <span>현재시간 :</span>
           <div style="display: inline-block" class="animated infinite pulse clock"></div>
         </div>
 
         <article id="resultContent">
-          <%= render 'home/resultTable' %>
+          <div class="table-container">
+          	<table id="table-result">
+          	
+            </table>
+          </div>
         </article>
-        <div class="test"></div>
 
-  		</div>
   	</div>
+  </div>
 
   </div>
 </div>

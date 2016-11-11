@@ -1,8 +1,2 @@
-var now = new Date();
-
-var d = now.getDay();
-var h = now.getHours();
-var m = now.getMinutes();
-var s = now.getSeconds();
-
-$('.test').append("<%= @building %>");
+$("#table-result").html("");
+$("#table-result").append("<%= j render('/home/resultTable') %>");

@@ -1,32 +1,54 @@
-<div class="table-container">
-	<table>
-		<thead>
+<thead class="table-head">
+	<tr>
+		<th width="30%">강의실</th>
+		<th>수업 없는 시간</th>
+	</tr>
+</thead>
+
+<% cnt = 0 %>
+<tbody class="table-body">
+<% @reverseTable.each do |roomName, timeSet| %>
+	<% print timeSet[0] %>
+	<% puts "--" %>
+	<% print timeSet[0].empty? %>
+	<% unless timeSet.empty? %>
+	<% unless timeSet[0].empty? %>
+	<!-- 수업시간 없음 -->
 			<tr>
-				<th>강의실</th>
-				<th>열린 시간</th>
+				<td><%= roomName %></td>
+				<td>
+					<% timeSet.each do |time| %>
+					<% time.each do |eachTime| %>
+							<% if eachTime == "09:00" %>
+								<span class="circle-number circle-color1">1교시</span>
+							<% elsif eachTime == "10:30" %>
+								<span class="circle-number circle-color2">2교시</span>
+							<% elsif eachTime == "12:00" %>
+								<span class="circle-number circle-color3">3교시</span>
+							<% elsif eachTime == "13:30" %>
+								<span class="circle-number circle-color4">4교시</span>
+							<% elsif eachTime == "15:00" %>
+								<span class="circle-number circle-color5">5교시</span>
+							<% elsif eachTime == "16:30" %>
+								<span class="circle-number circle-color6">6교시</span>
+							<% end %>
+						<% end %>
+					<% end %>
+				</td>
 			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>K302</td>
-				<td>몇 분</td>
-			</tr>
-			<tr>
-				<td>K302</td>
-				<td>몇 분</td>
-			</tr>
-			<tr>
-				<td>K302</td>
-				<td>몇 분</td>
-			</tr>
-			<tr>
-				<td>K302</td>
-				<td>몇 분</td>
-			</tr>
-			<tr>
-				<td>K302</td>
-				<td>몇 분</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+			<% end %>
+	<% else %>
+		<% cnt = cnt+1 %>
+	<% end %>
+<% end %>
+
+
+<% if cnt == @resultTable.length %>
+	<script>
+		$(".table-head").html("");
+		$(".table-body").html("");
+		$(".table-container").css("display", "table");
+		$(".table-container").html("<div id='emptyResult'><span>찾는 결과가 없어요 ㅠㅠ</span><br><img src='/sorry.jpg' id='sorry'></div>");
+	</script>
+<% end %>
+</tbody>
